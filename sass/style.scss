@@ -108,6 +108,8 @@ main {
   flex: 1;
 }
 
+
+
 // Showcase
 
 #showcase {
@@ -207,6 +209,33 @@ main {
   }
 }
 
+@media only screen and (max-width: 990px) {
+  #showcase {
+    flex-direction: column;
+  }
+
+  #left {
+    flex: 0.4;
+    height: 40vh;
+
+    & .container {
+      height: 40vh;
+    }
+
+    & p {
+      display: none;
+    }
+  }
+
+  #right {
+    flex: 0.6;
+    height: 60vh;
+    width: 100vw;
+  }
+}
+
+
+
 //header
 header {
   z-index: 1;
@@ -292,6 +321,11 @@ header ul:hover {
 }
 }
 
+@media only screen and (max-width: 990px) {
+  header {
+    background-color: transparent;
+  }
+}
 
 
 
@@ -309,11 +343,10 @@ footer {
 
 footer h3 {
   font-family: 'Open Sans', sans-serif;
-  margin-left: 2rem;
   color: #7a7a7a;
   font-size: 1rem;
   font-weight: 600;
-  margin: 0.8rem 0 0 2rem;
+  padding: 0.8rem 0 0 2rem;
 }
 
 footer ul {
@@ -327,4 +360,88 @@ footer a, footer span {
   font-family: 'Open Sans', sans-serif;
   color: #999999;
   font-size: 0.9rem;
+}
+
+@media only screen and (max-width: 990px) {
+
+  footer h3 {
+    width: 100%;
+    background-color: #fcfcfc;
+    padding: 0.3rem 0 0.3rem 2rem;
+    position: relative;
+  }
+
+  footer h3::after {
+    content: "▸";
+    font-size: inherit;
+    margin-left: 1rem;
+    position: absolute;
+  }
+
+  footer.open h3::after {
+    transform: rotate(90deg);
+  }
+
+  footer ul {
+    flex-direction: column;
+    height: 0;
+    transition: height 0.5s cubic-bezier(0.7, 0, 0.3, 1);
+    transition-delay: 0.4s;
+  }
+
+  footer.open ul {
+    height: 140px;
+    transition-delay: 0s;
+  }
+
+  footer li {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s cubic-bezier(0.7, 0, 0.3, 1);;
+
+    &:nth-of-type(1) {
+      transition-delay: 0.4s;
+    }
+
+    &:nth-of-type(2) {
+      transition-delay: 0.3s;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: 0.2s;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: 0.1s;
+    }
+  }
+
+  footer.open li {
+    transform: none;
+    opacity: 1;
+
+    &:nth-of-type(1) {
+      transition-delay: 0.1s;
+    }
+
+    &:nth-of-type(2) {
+      transition-delay: 0.2s;
+    }
+
+    &:nth-of-type(3) {
+      transition-delay: 0.3s;
+    }
+
+    &:nth-of-type(4) {
+      transition-delay: 0.4s;
+    }
+  }
+
+  footer li:not(:first-child) a {
+    margin: 0rem 0 0.8rem 2rem;
+  }
+
+  footer span {
+    display: none;
+  }
 }
