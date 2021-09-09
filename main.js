@@ -11,5 +11,9 @@ function init() {
     document.querySelector("footer").classList.toggle("open")
   })
   randomizeContent()
+
+  document.querySelector("#right").addEventListener("animationend", () => {
   showcaseSetup()
+  })
+  
 }
