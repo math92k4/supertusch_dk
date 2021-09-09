@@ -51,33 +51,47 @@ function updatePrevScrlValue(scrlValue) {
 
 function moveToNext(scrlValue) {
   const maxSectionValue = document.querySelectorAll('#left .container').length - 1
+  let reset = false
   if (scrlValue > prevScrlValue && pause === false) {
     pauseScrolling()
     currentSection++
     if (currentSection > maxSectionValue) {
       currentSection = 0
+      reset = true
     }
-    moveTransporter()
+    moveTransporter(reset)
   }
 }
 
 function moveToPrev(scrlValue) {
   const maxSectionValue = document.querySelectorAll('#left .container').length - 1
+  let reset = false
   if (scrlValue * -1 > prevScrlValue && pause === false) {
     pauseScrolling()
     currentSection--
     if (currentSection < 0) {
       currentSection = maxSectionValue
+      reset = true
     }
-    moveTransporter()
+    moveTransporter(reset)
   }
 }
 
-function moveTransporter() {
-  const transValue = 100 / document.querySelectorAll('#left .container').length
-  document.querySelectorAll('#showcase  .transporter').forEach((elm) => {
-    elm.style.setProperty('--trans-val', -currentSection * transValue + '%')
-  })
+function moveTransporter(reset) {
+  let transValue = 100 / document.querySelectorAll('#left .container').length
+
+  if (reset) {
+    document.querySelectorAll('#showcase  .transporter').forEach((elm) => {
+      elm.style.setProperty('--trans-val', -currentSection * transValue + '%')
+      elm.style.setProperty("--trans-speed", "1.7s")
+    })
+  } else {
+
+      document.querySelectorAll('#showcase  .transporter').forEach((elm) => {
+        elm.style.setProperty('--trans-val', -currentSection * transValue + '%')
+        elm.style.setProperty("--trans-speed", "0.8s")
+      })
+    }
 }
 
 function pauseScrolling() {

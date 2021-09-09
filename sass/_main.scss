@@ -129,7 +129,7 @@
       transform: translateY(var(--trans-val));
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      transition: transform 0.8s cubic-bezier(0.7, 0, 0.3, 1);
+      transition: transform var(--trans-speed) cubic-bezier(0.7, 0, 0.3, 1);
     }
     & .container {
       height: 100vh;
@@ -179,7 +179,7 @@
       transform: translateX(var(--trans-val));
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
-      transition: transform 0.8s 0.2s cubic-bezier(0.7, 0, 0.3, 1);
+      transition: transform var(--trans-speed) 0.2s cubic-bezier(0.7, 0, 0.3, 1);
   
   
       & div {
@@ -204,6 +204,18 @@
   
     & .three {
       background-image: url('/imgs/1.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    & .four {
+      background-image: url('/imgs/festival.jpeg');
+      background-size: cover;
+      background-position: center;
+    }
+
+    & .five {
+      background-image: url('/imgs/kaffe.jpg');
       background-size: cover;
       background-position: center;
     }
