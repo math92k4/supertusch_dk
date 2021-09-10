@@ -1,0 +1,38 @@
+#clients {
+    padding: 5rem 0rem 2rem 0rem;
+    height: calc(100vh - 5rem);
+    overflow: scroll;
+
+
+    & .grid_container {
+        padding: 0rem 2rem;
+        display: grid;
+        grid-gap: 5rem 2rem;
+        grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
+
+
+    & h2 {
+        font-family: 'Libre Baskerville', serif;
+        color: #151515;
+        font-size: 2rem;
+        margin: 0 0 1.5rem 2rem;
+      }
+
+    & h3 {
+        font-family: 'Libre Baskerville', serif;
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+        color: #151515;
+        line-height: 2rem;
+        font-weight: 700;
+    }
+    
+    & p {
+        font-family: "museo-sans", sans-serif;
+        font-weight: 300;
+        color: #151515;
+        font-size: 1rem;
+        line-height: 1.6rem;
+    }
+}

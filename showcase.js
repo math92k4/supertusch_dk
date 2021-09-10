@@ -4,11 +4,14 @@ let currentSection = 0
 let pause = false
 
 export function showcaseSetup() {
-  window.addEventListener('wheel', mouseScrolled)
+
+  const showcase = document.querySelector("#showcase")
+
+  showcase.addEventListener('wheel', mouseScrolled)
 
   //Resets prevScrlValue after 0.5s without scolling
   let scrlValueResetTimer = null
-  window.addEventListener('wheel', () => {
+  showcase.addEventListener('wheel', () => {
     if (scrlValueResetTimer !== null) {
       clearTimeout(scrlValueResetTimer)
     }
@@ -21,8 +24,9 @@ export function showcaseSetup() {
 }
 
 function autoMoveSetup() {
+  const showcase = document.querySelector("#showcase")
   let autoMoveInt = setInterval(autoMove, 5000)
-  window.addEventListener('wheel', () => {
+  showcase.addEventListener('wheel', () => {
     clearInterval(autoMoveInt)
     autoMoveInt = setInterval(autoMove, 5000)
   })
