@@ -15,7 +15,7 @@
     text-decoration: none;
     color: #202020;
     font-size: 1rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "museo-sans", sans-serif;
   }
   
   body {
@@ -148,8 +148,9 @@
     & h2 {
       font-family: 'Libre Baskerville', serif;
       color: #202020;
-      font-size: 1.3rem;
+      font-size: 1.25rem;
       margin-bottom: 0.3rem;
+      
     }
     & h3 {
       font-family: 'Libre Baskerville', serif;
@@ -157,10 +158,12 @@
       margin-bottom: 0.5rem;
       color: #202020;
       line-height: 3rem;
+      font-weight: 700;
     }
   
     & p {
-      font-family: 'Open Sans', sans-serif;
+      font-family: "museo-sans", sans-serif;
+      font-weight: 300;
       color: #202020;
       font-size: 1rem;
       line-height: 1.6rem;
@@ -244,6 +247,32 @@
       height: 60vh;
       width: 100vw;
     }
+  }
+
+  @media only screen and (min-width: 1600px) {
+    #left {
+
+      & .content {
+        max-width: 25vw;
+      }
+
+      & h2 {
+        font-size: 1.25vw;
+        margin-bottom: 0.3vw;
+        
+      }
+      & h3 {
+        font-size: 3vw;
+        margin-bottom: 0.5vw;
+        line-height: 3vw;
+      }
+    
+      & p {
+        font-size: 1vw;
+        line-height: 1.6vw;
+      }
+    }
+
   }
   
   
@@ -352,9 +381,9 @@
   }
   
   footer h3 {
-    font-family: 'Open Sans', sans-serif;
+    font-family: "museo-sans", sans-serif;
     color: #7a7a7a;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 600;
     padding: 0.8rem 0 0 2rem;
   }
@@ -367,8 +396,9 @@
   footer a, footer span {
     margin: 0.8rem 0 0.8rem 2rem;
     display: block;
-    font-family: 'Open Sans', sans-serif;
-    color: #999999;
+    font-family: "museo-sans", sans-serif;
+    // color: #999999;
+    color: #7a7a7a;
     font-size: 0.9rem;
   }
   
